@@ -6,24 +6,22 @@
     <title>HZ SPORTS | Official Global Store</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .product-card { transition: 0.3s; border: 1px solid #2d3748; background: #0a0a0a; }
-        .product-card:hover { border-color: #ff0000; transform: translateY(-5px); }
-        .speed-line { height: 2px; background: linear-gradient(90deg, #ff0000, transparent); width: 50px; }
+        .product-card { transition: 0.3s; border: 1px solid #2d3748; background: #0a0a0a; border-radius: 15px; overflow: hidden; }
+        .product-card:hover { border-color: #ff0000; transform: translateY(-5px); box-shadow: 0 10px 20px rgba(255,0,0,0.1); }
+        .img-zoom { transition: transform .5s ease; }
+        .product-card:hover .img-zoom { transform: scale(1.1); }
     </style>
 </head>
 <body class="bg-black text-white font-sans">
 
-    <nav class="sticky top-0 z-50 bg-black border-b border-red-900 p-4">
+    <nav class="sticky top-0 z-50 bg-black/90 backdrop-blur-md border-b border-red-900 p-4">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="flex items-center gap-2">
                 <div class="bg-red-600 p-2 rounded-sm rotate-12 font-black text-xl italic">HZ</div>
-                <div class="flex flex-col">
-                    <h1 class="text-2xl font-black tracking-tighter italic">SPORTS</h1>
-                    <div class="speed-line"></div>
-                </div>
+                <h1 class="text-2xl font-black tracking-tighter italic">SPORTS</h1>
             </div>
             <div class="flex items-center gap-2 w-full md:w-1/2">
-                <input type="text" id="searchBar" placeholder="Search 2000+ items..." 
+                <input type="text" id="searchBar" placeholder="Search premium gear..." 
                        class="w-full p-3 rounded-l-lg bg-gray-900 border border-gray-700 text-white focus:outline-none">
                 <select id="currency" class="p-3 bg-red-600 rounded-r-lg font-bold text-sm">
                     <option value="PKR">PKR</option>
@@ -33,75 +31,64 @@
         </div>
     </nav>
 
-    <header class="relative h-64 flex items-center justify-center overflow-hidden bg-gray-900">
-        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200" class="absolute w-full h-full object-cover opacity-40">
-        <div class="relative z-10 text-center px-4">
-            <h2 class="text-4xl md:text-6xl font-black uppercase italic tracking-tighter">Global Export</h2>
-            <p class="text-red-500 font-bold tracking-widest mt-2 uppercase">Faisalabad Quality • Worldwide Shipping</p>
-        </div>
-    </header>
-
     <main class="max-w-7xl mx-auto p-4 md:p-8">
-        <div id="productGrid" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8"></div>
+        <div id="productGrid" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+            </div>
     </main>
 
-    <section class="max-w-4xl mx-auto p-6 md:p-12 border-t border-gray-800">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-            
-            <div class="bg-zinc-950 p-6 rounded-2xl border border-red-900">
-                <h3 class="text-red-600 font-black mb-4 uppercase tracking-tighter text-xl">Official Payment</h3>
-                <div class="space-y-4 text-sm font-mono text-gray-400">
-                    <p><span class="text-white">Bank:</span> United Bank Ltd (UBL)</p>
-                    <p><span class="text-white">IBAN:</span> PK43 UNIL 0109 0003 3917 2252</p>
-                    <p><span class="text-white">SWIFT:</span> UNILPKKA</p>
-                    <hr class="border-gray-800">
-                    <p class="text-[10px] italic text-gray-500">Note: Send payment screenshot to +92 348 8480203 for immediate processing.</p>
-                </div>
-            </div>
-
-            <div class="space-y-4">
-                <h3 class="text-white font-black uppercase tracking-tighter text-xl">Store Policies</h3>
-                <div class="space-y-3 text-xs text-gray-400 leading-relaxed">
-                    <p><strong class="text-red-500">SHIPPING:</strong> We ship worldwide from Faisalabad. Delivery takes 7-14 business days for international orders.</p>
-                    <p><strong class="text-red-500">PAYMENT:</strong> Orders are processed only after 100% advance payment confirmation via UBL bank transfer.</p>
-                    <p><strong class="text-red-500">RETURNS:</strong> We offer a 7-day replacement guarantee if the product has a manufacturing defect or wrong size delivered.</p>
-                    <p><strong class="text-red-500">WHOLESALE:</strong> For bulk/factory orders (50+ items), contact us directly for special export rates.</p>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
     <footer class="p-10 text-center text-gray-700 text-xs border-t border-gray-900">
-        &copy; 2026 HZ SPORTS GLOBAL | ALL RIGHTS RESERVED
+        &copy; 2026 HZ SPORTS GLOBAL | FAISALABAD EXPORT QUALITY
     </footer>
 
     <script>
+        // High-Quality Attractive Image Links
+        const imgBank = {
+            "Tracksuit": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=500&q=80",
+            "Road Cycle": "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=500&q=80",
+            "Crossfit Shoes": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&q=80",
+            "Whey Pro": "https://images.unsplash.com/photo-1593095191071-82b0fdd871a2?w=500&q=80",
+            "Dumbbell Set": "https://images.unsplash.com/photo-1638536532686-d610adfc8e5c?w=500&q=80",
+            "Sport Hoodie": "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500&q=80"
+        };
+
         const products = [];
-        const categories = ["Tracksuit", "Road Cycle", "Crossfit Shoes", "Whey Pro", "Dumbbell Set", "Sport Hoodie"];
-        const colors = ["Black Stealth", "Ruby Red", "Electric Blue", "Steel Grey"];
+        const categories = Object.keys(imgBank);
+        const colors = ["Stealth Black", "Crimson Red", "Royal Blue", "Titanium Grey"];
         let curr = "PKR";
 
         for (let i = 1; i <= 2000; i++) {
+            const cat = categories[Math.floor(Math.random() * categories.length)];
+            const col = colors[Math.floor(Math.random() * colors.length)];
             const base = Math.floor(Math.random() * (55000 - 2500) + 2500);
+            
             products.push({
                 id: i,
-                name: `HZ ${colors[Math.floor(Math.random()*colors.length)]} ${categories[Math.floor(Math.random()*categories.length)]} X-${i}`,
+                name: `HZ ${col} ${cat}`,
                 pkr: base,
                 usd: Math.round(base / 278),
-                img: `https://picsum.photos/seed/hz${i}/400/400`
+                img: imgBank[cat] // Uses the matching high-quality image
             });
         }
 
         const grid = document.getElementById('productGrid');
         function render(items) {
             grid.innerHTML = items.map(p => `
-                <div class="product-card rounded-xl overflow-hidden p-3 flex flex-col justify-between">
-                    <img src="${p.img}" class="rounded-lg h-32 md:h-48 w-full object-cover mb-2" loading="lazy">
-                    <h4 class="text-[10px] font-bold uppercase h-8 overflow-hidden">${p.name}</h4>
-                    <p class="text-red-600 font-black mt-1 text-sm">${curr === "PKR" ? p.pkr.toLocaleString()+' PKR' : '$'+p.usd}</p>
-                    <a href="https://wa.me/923488480203?text=ORDER ID:${p.id} - ${p.name}" class="mt-3 block text-center bg-white text-black text-[10px] font-black py-2 rounded-lg uppercase hover:bg-red-600 hover:text-white">Order Now</a>
-                </div>`).join('');
+                <div class="product-card">
+                    <div class="overflow-hidden h-40 md:h-56">
+                        <img src="${p.img}" class="img-zoom w-full h-full object-cover">
+                    </div>
+                    <div class="p-4">
+                        <h4 class="text-[11px] font-bold uppercase tracking-tight h-8 overflow-hidden">${p.name} #${100+p.id}</h4>
+                        <p class="text-red-500 font-black mt-2 text-base">
+                            ${curr === "PKR" ? p.pkr.toLocaleString() + ' PKR' : '$' + p.usd}
+                        </p>
+                        <a href="https://wa.me/923488480203?text=Interested in ID:${p.id} - ${p.name}" 
+                           class="mt-4 block text-center bg-white text-black text-[10px] font-black py-3 rounded-lg uppercase hover:bg-red-600 hover:text-white transition">
+                           Order on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            `).join('');
         }
 
         document.getElementById('currency').onchange = (e) => { curr = e.target.value; render(products); };
