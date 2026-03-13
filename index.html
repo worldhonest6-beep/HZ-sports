@@ -3,122 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HZ | Premium Global Store</title>
+    <title>HZ Mega Store | 2000+ Items</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        .gradient-red { background: linear-gradient(90deg, #991b1b 0%, #dc2626 100%); }
-        .product-card { transition: all 0.3s ease; border: 1px solid #1f2937; }
-        .product-card:hover { transform: translateY(-5px); border-color: #dc2626; }
+        .product-card { transition: 0.3s; border: 1px solid #2d3748; }
+        .product-card:hover { border-color: #e53e3e; transform: translateY(-3px); }
+        #searchBar:focus { ring: 2px; ring-color: #e53e3e; outline: none; }
     </style>
 </head>
-<body class="bg-black text-white font-sans">
+<body class="bg-black text-white">
 
-    <nav class="p-4 border-b border-gray-800 sticky top-0 bg-black z-50 flex justify-between items-center">
-        <h1 class="text-3xl font-black text-red-600 italic">HZ</h1>
-        <a href="https://wa.me/923488480203" class="bg-green-600 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-tighter hover:bg-green-500">Contact Sales</a>
+    <nav class="sticky top-0 z-50 bg-black border-b border-gray-800 p-4">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+            <h1 class="text-3xl font-black text-red-600 italic">HZ SPORTS</h1>
+            <input type="text" id="searchBar" placeholder="Search 2,000+ items (e.g. 'Red Tracksuit', 'Bike 500')..." 
+                   class="w-full md:w-1/2 p-3 rounded-lg bg-gray-900 border border-gray-700 text-white">
+            <div class="flex gap-4 text-xs font-bold uppercase text-gray-400">
+                <span>Items: <span id="itemCount" class="text-red-500">2000</span></span>
+                <a href="https://wa.me/923488480203" class="text-green-500 underline">Help</a>
+            </div>
+        </div>
     </nav>
 
-    <header class="py-12 text-center gradient-red px-4">
-        <h2 class="text-4xl font-black uppercase mb-2">HZ Sports Store</h2>
-        <p class="text-sm opacity-90 tracking-widest uppercase">Export Quality • Factory Rates • World Shipping</p>
+    <header class="py-12 text-center bg-gradient-to-r from-red-900 to-red-600">
+        <h2 class="text-4xl font-black uppercase">HZ Global Inventory</h2>
+        <p class="opacity-80">Bulk Export & Retail | Factory Direct from Faisalabad</p>
     </header>
 
-    <main class="max-w-7xl mx-auto py-12 px-6">
-        
-        <h3 class="text-2xl font-bold mb-8 border-l-4 border-red-600 pl-4 uppercase">Athletic Apparel</h3>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            <div class="product-card bg-gray-900 rounded-xl p-4">
-                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=400" class="rounded-lg mb-4 h-48 w-full object-cover">
-                <h4 class="font-bold">Alpha Tracksuit</h4>
-                <p class="text-gray-400 text-xs mb-4 italic">Available in Black, Blue, Grey</p>
-                <div class="flex justify-between items-center">
-                    <span class="text-red-500 font-bold">$45 / 12,500 PKR</span>
-                    <a href="https://wa.me/923488480203?text=I want to buy Alpha Tracksuit" class="bg-red-600 px-3 py-1 rounded text-xs">Buy</a>
-                </div>
+    <main class="max-w-7xl mx-auto p-6">
+        <div id="productGrid" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             </div>
-            <div class="product-card bg-gray-900 rounded-xl p-4">
-                <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?w=400" class="rounded-lg mb-4 h-48 w-full object-cover">
-                <h4 class="font-bold">Compression Gym Tee</h4>
-                <p class="text-gray-400 text-xs mb-4 italic">Sweat-wicking performance fabric</p>
-                <div class="flex justify-between items-center">
-                    <span class="text-red-500 font-bold">$18 / 5,000 PKR</span>
-                    <a href="https://wa.me/923488480203?text=I want to buy Gym Tee" class="bg-red-600 px-3 py-1 rounded text-xs">Buy</a>
-                </div>
-            </div>
-            <div class="product-card bg-gray-900 rounded-xl p-4">
-                <img src="https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=400" class="rounded-lg mb-4 h-48 w-full object-cover">
-                <h4 class="font-bold">HZ Pro Shorts</h4>
-                <p class="text-gray-400 text-xs mb-4 italic">Lightweight with zip pockets</p>
-                <div class="flex justify-between items-center">
-                    <span class="text-red-500 font-bold">$15 / 4,200 PKR</span>
-                    <a href="https://wa.me/923488480203?text=I want to buy HZ Shorts" class="bg-red-600 px-3 py-1 rounded text-xs">Buy</a>
-                </div>
-            </div>
-        </div>
-
-        <h3 class="text-2xl font-bold mb-8 border-l-4 border-red-600 pl-4 uppercase">Performance Cycles</h3>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-            <div class="product-card bg-gray-900 rounded-xl p-4">
-                <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=600" class="rounded-lg mb-4 h-64 w-full object-cover">
-                <h4 class="font-bold">HZ Stealth Road Bike</h4>
-                <p class="text-gray-400 text-xs mb-4 italic">Aluminum frame, 21-speed Shimano gears</p>
-                <div class="flex justify-between items-center text-red-500 font-bold">
-                    <span>$299 / 83,000 PKR</span>
-                    <a href="https://wa.me/923488480203?text=I want to buy Road Bike" class="bg-red-600 text-white px-6 py-2 rounded text-xs">Order Now</a>
-                </div>
-            </div>
-            <div class="product-card bg-gray-900 rounded-xl p-4">
-                <img src="https://images.unsplash.com/photo-1532298229144-0ee0c9e9ad2d?w=600" class="rounded-lg mb-4 h-64 w-full object-cover">
-                <h4 class="font-bold">HZ Mountain Ranger</h4>
-                <p class="text-gray-400 text-xs mb-4 italic">Off-road tires, dual suspension</p>
-                <div class="flex justify-between items-center text-red-500 font-bold">
-                    <span>$350 / 97,000 PKR</span>
-                    <a href="https://wa.me/923488480203?text=I want to buy Mountain Bike" class="bg-red-600 text-white px-6 py-2 rounded text-xs">Order Now</a>
-                </div>
-            </div>
-        </div>
-
-        <h3 class="text-2xl font-bold mb-8 border-l-4 border-red-600 pl-4 uppercase">Health & Nutrition</h3>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="product-card bg-gray-900 rounded-xl p-4 text-center">
-                <img src="https://images.unsplash.com/photo-1584013323583-8257c94286a1?w=400" class="rounded-lg mb-4 h-48 w-full object-cover">
-                <h4 class="font-bold">Whey Protein Isolate</h4>
-                <p class="text-gray-400 text-xs mb-4">25g Protein per scoop</p>
-                <a href="https://wa.me/923488480203?text=Buy Protein" class="block bg-green-600 py-2 rounded text-sm font-bold">WhatsApp Order</a>
-            </div>
-            <div class="product-card bg-gray-900 rounded-xl p-4 text-center">
-                <img src="https://images.unsplash.com/photo-1579722820308-d74e5719d38e?w=400" class="rounded-lg mb-4 h-48 w-full object-cover">
-                <h4 class="font-bold">Pre-Workout Spark</h4>
-                <p class="text-gray-400 text-xs mb-4">Focus & Explosive Power</p>
-                <a href="https://wa.me/923488480203?text=Buy Pre-workout" class="block bg-green-600 py-2 rounded text-sm font-bold">WhatsApp Order</a>
-            </div>
-            <div class="product-card bg-gray-900 rounded-xl p-4 text-center">
-                <img src="https://images.unsplash.com/photo-1512069772995-ec65ed45afd6?w=400" class="rounded-lg mb-4 h-48 w-full object-cover">
-                <h4 class="font-bold">Daily Multivitamin</h4>
-                <p class="text-gray-400 text-xs mb-4">60 Capsules / Full Month</p>
-                <a href="https://wa.me/923488480203?text=Buy Multivitamins" class="block bg-green-600 py-2 rounded text-sm font-bold">WhatsApp Order</a>
-            </div>
-        </div>
-
     </main>
 
-    <section id="checkout" class="py-12 px-6 bg-gray-900 border-t border-red-700">
-        <div class="max-w-xl mx-auto bg-black border border-gray-700 p-8 rounded-3xl text-center">
-            <h3 class="text-2xl font-bold text-red-600 mb-6 uppercase">UBL International Hub</h3>
-            <div class="text-left space-y-3 font-mono text-sm">
-                <p class="border-b border-gray-800 pb-2"><span class="text-gray-500">Bank:</span> United Bank Ltd</p>
-                <p class="border-b border-gray-800 pb-2"><span class="text-gray-500">IBAN:</span> PK43 UNIL 0109 0003 3917 2252</p>
-                <p class="border-b border-gray-800 pb-2"><span class="text-gray-500">SWIFT:</span> UNILPKKA</p>
-            </div>
-            <p class="mt-6 text-xs text-gray-500 mb-6">Send screenshot of payment to WhatsApp for confirmation.</p>
-            <a href="https://wa.me/923488480203" class="block bg-white text-black py-4 rounded-xl font-black uppercase tracking-widest hover:bg-gray-200 transition">Confirm Payment</a>
-        </div>
-    </section>
-
-    <footer class="p-8 text-center text-gray-600 text-xs border-t border-gray-900">
-        &copy; 2026 HZ SPORTS GLOBAL | FAISALABAD, PAKISTAN
+    <footer class="p-10 text-center border-t border-gray-900 text-gray-500 text-sm">
+        <p>United Bank Ltd (UBL): PK43 UNIL 0109 0003 3917 2252</p>
+        <p class="mt-2">© 2026 HZ SPORTS GLOBAL</p>
     </footer>
 
+    <script>
+        const products = [];
+        const categories = ["Tracksuit", "Cycle", "Shoes", "Supplements", "Gym Gear"];
+        const colors = ["Red", "Black", "Blue", "Silver", "Grey", "Neon"];
+        
+        // --- 1. GENERATE 2000 ITEMS AUTOMATICALLY ---
+        for (let i = 1; i <= 2000; i++) {
+            const cat = categories[Math.floor(Math.random() * categories.length)];
+            const col = colors[Math.floor(Math.random() * colors.length)];
+            const pricePKR = Math.floor(Math.random() * (90000 - 1500) + 1500).toLocaleString();
+            
+            products.push({
+                id: i,
+                name: `HZ ${col} ${cat} #${1000 + i}`,
+                category: cat,
+                price: `${pricePKR} PKR`,
+                img: `https://picsum.photos/seed/${i + 50}/400/400` // Random high-quality placeholders
+            });
+        }
+
+        const grid = document.getElementById('productGrid');
+        const searchBar = document.getElementById('searchBar');
+
+        // --- 2. DISPLAY FUNCTION ---
+        function displayProducts(items) {
+            grid.innerHTML = items.map(p => `
+                <div class="product-card bg-gray-900 rounded-xl overflow-hidden p-3 flex flex-col justify-between">
+                    <img src="${p.img}" class="rounded-lg h-40 w-full object-cover mb-3" loading="lazy">
+                    <div>
+                        <h4 class="font-bold text-sm h-10 overflow-hidden text-gray-100">${p.name}</h4>
+                        <p class="text-red-500 font-bold mt-2">${p.price}</p>
+                    </div>
+                    <a href="https://wa.me/923488480203?text=Order Item ID ${p.id}: ${p.name}" 
+                       class="mt-4 block w-full text-center bg-red-600 hover:bg-red-700 text-white text-xs py-2 rounded-lg font-bold">
+                       Buy via WhatsApp
+                    </a>
+                </div>
+            `).join('');
+            document.getElementById('itemCount').innerText = items.length;
+        }
+
+        // --- 3. LIVE SEARCH LOGIC ---
+        searchBar.addEventListener('input', (e) => {
+            const val = e.target.value.toLowerCase();
+            const filtered = products.filter(p => p.name.toLowerCase().includes(val));
+            displayProducts(filtered);
+        });
+
+        // Initial Load (Show first 2000 items)
+        displayProducts(products);
+    </script>
 </body>
 </html>
