@@ -6,24 +6,24 @@
     <title>HZ SPORTS | Official Global Store</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .product-card { transition: 0.3s; border: 1px solid #2d3748; background: #0a0a0a; border-radius: 15px; overflow: hidden; }
-        .product-card:hover { border-color: #ff0000; transform: translateY(-5px); box-shadow: 0 10px 20px rgba(255,0,0,0.1); }
-        .img-zoom { transition: transform .5s ease; }
-        .product-card:hover .img-zoom { transform: scale(1.1); }
+        .product-card { transition: 0.3s; border: 1px solid #2d3748; background: #0a0a0a; border-radius: 20px; overflow: hidden; }
+        .product-card:hover { border-color: #ff0000; transform: translateY(-8px); box-shadow: 0 15px 30px rgba(255,0,0,0.15); }
+        .popular-badge { background: linear-gradient(90deg, #ff0000, #991b1b); }
+        .size-btn:hover { background: #ff0000; color: white; border-color: #ff0000; }
     </style>
 </head>
 <body class="bg-black text-white font-sans">
 
-    <nav class="sticky top-0 z-50 bg-black/90 backdrop-blur-md border-b border-red-900 p-4">
+    <nav class="sticky top-0 z-50 bg-black/95 border-b border-red-900 p-4">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="flex items-center gap-2">
-                <div class="bg-red-600 p-2 rounded-sm rotate-12 font-black text-xl italic">HZ</div>
+                <div class="bg-red-600 p-2 rounded-sm rotate-12 font-black text-xl italic text-white">HZ</div>
                 <h1 class="text-2xl font-black tracking-tighter italic">SPORTS</h1>
             </div>
             <div class="flex items-center gap-2 w-full md:w-1/2">
-                <input type="text" id="searchBar" placeholder="Search premium gear..." 
+                <input type="text" id="searchBar" placeholder="Search popular gear..." 
                        class="w-full p-3 rounded-l-lg bg-gray-900 border border-gray-700 text-white focus:outline-none">
-                <select id="currency" class="p-3 bg-red-600 rounded-r-lg font-bold text-sm">
+                <select id="currency" class="p-3 bg-red-600 rounded-r-lg font-bold text-sm text-white">
                     <option value="PKR">PKR</option>
                     <option value="USD">USD</option>
                 </select>
@@ -31,72 +31,113 @@
         </div>
     </nav>
 
-    <main class="max-w-7xl mx-auto p-4 md:p-8">
-        <div id="productGrid" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+    <section class="max-w-7xl mx-auto p-6">
+        <h2 class="text-2xl font-black italic mb-6 border-l-4 border-red-600 pl-4 uppercase">🔥 Popular Items</h2>
+        <div id="popularGrid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
             </div>
-    </main>
+    </section>
+
+    <section class="max-w-7xl mx-auto p-6 mt-10">
+        <h2 class="text-xl font-bold text-gray-500 mb-6 uppercase tracking-widest">Full Inventory</h2>
+        <div id="standardGrid" class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
+            </div>
+    </section>
 
     <footer class="p-10 text-center text-gray-700 text-xs border-t border-gray-900">
-        &copy; 2026 HZ SPORTS GLOBAL | FAISALABAD EXPORT QUALITY
+        <p>Official UBL IBAN: PK43 UNIL 0109 0003 3917 2252</p>
+        <p class="mt-4">&copy; 2026 HZ SPORTS GLOBAL | PREMIUM EXPORTS</p>
     </footer>
 
     <script>
-        // High-Quality Attractive Image Links
         const imgBank = {
-            "Tracksuit": "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=500&q=80",
-            "Road Cycle": "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=500&q=80",
-            "Crossfit Shoes": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&q=80",
-            "Whey Pro": "https://images.unsplash.com/photo-1593095191071-82b0fdd871a2?w=500&q=80",
-            "Dumbbell Set": "https://images.unsplash.com/photo-1638536532686-d610adfc8e5c?w=500&q=80",
-            "Sport Hoodie": "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500&q=80"
+            "Tracksuit": {
+                img: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600",
+                desc: "Premium sweat-wicking fabric. Export Quality.",
+                sizes: ["S", "M", "L", "XL"]
+            },
+            "Road Cycle": {
+                img: "https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=600",
+                desc: "Lightweight aluminum frame. 21-Speed Shimano.",
+                sizes: ["26\"", "27.5\"", "29\""]
+            },
+            "Crossfit Shoes": {
+                img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600",
+                desc: "Pro-grip sole for heavy gym lifting.",
+                sizes: ["40", "41", "42", "43", "44"]
+            },
+            "Whey Pro": {
+                img: "https://images.unsplash.com/photo-1593095191071-82b0fdd871a2?w=600",
+                desc: "25g Protein Isolate per scoop. Zero sugar.",
+                sizes: ["1kg", "2.2kg", "5kg"]
+            }
         };
 
         const products = [];
         const categories = Object.keys(imgBank);
-        const colors = ["Stealth Black", "Crimson Red", "Royal Blue", "Titanium Grey"];
+        const colors = ["Stealth Black", "Crimson Red", "Royal Blue"];
         let curr = "PKR";
 
+        // Generate 2000 items
         for (let i = 1; i <= 2000; i++) {
             const cat = categories[Math.floor(Math.random() * categories.length)];
             const col = colors[Math.floor(Math.random() * colors.length)];
-            const base = Math.floor(Math.random() * (55000 - 2500) + 2500);
+            const base = Math.floor(Math.random() * (45000 - 2500) + 2500);
             
             products.push({
                 id: i,
                 name: `HZ ${col} ${cat}`,
                 pkr: base,
                 usd: Math.round(base / 278),
-                img: imgBank[cat] // Uses the matching high-quality image
+                category: cat,
+                popular: i <= 6 // First 6 items are marked popular
             });
         }
 
-        const grid = document.getElementById('productGrid');
-        function render(items) {
-            grid.innerHTML = items.map(p => `
-                <div class="product-card">
-                    <div class="overflow-hidden h-40 md:h-56">
-                        <img src="${p.img}" class="img-zoom w-full h-full object-cover">
+        function createCard(p, isLarge) {
+            const info = imgBank[p.category];
+            return `
+                <div class="product-card flex flex-col">
+                    <div class="relative overflow-hidden ${isLarge ? 'h-64' : 'h-40'}">
+                        ${p.popular ? '<span class="absolute top-2 left-2 z-10 popular-badge text-[10px] font-bold px-2 py-1 rounded">POPULAR</span>' : ''}
+                        <img src="${info.img}" class="w-full h-full object-cover hover:scale-110 transition duration-500">
                     </div>
-                    <div class="p-4">
-                        <h4 class="text-[11px] font-bold uppercase tracking-tight h-8 overflow-hidden">${p.name} #${100+p.id}</h4>
-                        <p class="text-red-500 font-black mt-2 text-base">
+                    <div class="p-4 flex-grow">
+                        <h4 class="font-black text-sm uppercase">${p.name}</h4>
+                        <p class="text-[10px] text-gray-500 mt-1 leading-tight">${info.desc}</p>
+                        
+                        <div class="mt-3">
+                            <p class="text-[9px] font-bold text-gray-400 mb-1 uppercase">Select Size:</p>
+                            <div class="flex flex-wrap gap-1">
+                                ${info.sizes.map(s => `<button class="size-btn border border-gray-700 px-2 py-1 rounded text-[10px] transition">${s}</button>`).join('')}
+                            </div>
+                        </div>
+
+                        <p class="text-red-500 font-black mt-4 text-lg">
                             ${curr === "PKR" ? p.pkr.toLocaleString() + ' PKR' : '$' + p.usd}
                         </p>
-                        <a href="https://wa.me/923488480203?text=Interested in ID:${p.id} - ${p.name}" 
-                           class="mt-4 block text-center bg-white text-black text-[10px] font-black py-3 rounded-lg uppercase hover:bg-red-600 hover:text-white transition">
+                        <a href="https://wa.me/923488480203?text=Order ID:${p.id} - ${p.name}" 
+                           class="mt-4 block text-center bg-white text-black text-[10px] font-black py-3 rounded-xl uppercase hover:bg-red-600 hover:text-white transition">
                            Order on WhatsApp
                         </a>
                     </div>
                 </div>
-            `).join('');
+            `;
         }
 
-        document.getElementById('currency').onchange = (e) => { curr = e.target.value; render(products); };
-        document.getElementById('searchBar').oninput = (e) => {
-            const val = e.target.value.toLowerCase();
-            render(products.filter(p => p.name.toLowerCase().includes(val)));
-        };
-        render(products);
+        function render() {
+            const searchVal = document.getElementById('searchBar').value.toLowerCase();
+            const filtered = products.filter(p => p.name.toLowerCase().includes(searchVal));
+            
+            const popularItems = filtered.filter(p => p.popular);
+            const standardItems = filtered.filter(p => !p.popular);
+
+            document.getElementById('popularGrid').innerHTML = popularItems.slice(0, 6).map(p => createCard(p, true)).join('');
+            document.getElementById('standardGrid').innerHTML = standardItems.slice(0, 20).map(p => createCard(p, false)).join('');
+        }
+
+        document.getElementById('currency').onchange = (e) => { curr = e.target.value; render(); };
+        document.getElementById('searchBar').oninput = render;
+        render();
     </script>
 </body>
 </html>
