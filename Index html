@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HZ | Premium Sports, Gym & Cycles</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .gradient-red { background: linear-gradient(90deg, #991b1b 0%, #dc2626 100%); }
+        .product-card { transition: all 0.3s ease; }
+        .product-card:hover { transform: scale(1.02); box-shadow: 0 10px 15px -3px rgba(220, 38, 38, 0.3); }
+    </style>
+</head>
+<body class="bg-black text-white selection:bg-red-500">
+
+    <nav class="p-4 border-b border-gray-800 sticky top-0 bg-black z-50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-black tracking-tighter text-red-600 italic">HZ</h1>
+            <div class="space-x-6 text-sm font-bold uppercase hidden md:block">
+                <a href="#shop" class="hover:text-red-500 transition">Shop</a>
+                <a href="#sizes" class="hover:text-red-500 transition">Size Guide</a>
+                <a href="#checkout" class="hover:text-red-500 transition">Payment</a>
+            </div>
+            <a href="https://wa.me/923488480203" class="bg-green-600 px-4 py-2 rounded-full text-xs font-bold hover:bg-green-500"><i class="fab fa-whatsapp"></i> Chat Now</a>
+        </div>
+    </nav>
+
+    <header class="py-20 text-center gradient-red">
+        <h2 class="text-6xl font-black mb-4 uppercase">Global Quality. Factory Prices.</h2>
+        <p class="text-xl opacity-90 max-w-2xl mx-auto px-4">Branded tracksuits, supplements, cycles, and gear. Direct from Pakistan to the world.</p>
+    </header>
+
+    <section id="shop" class="max-w-7xl mx-auto py-16 px-6">
+        <h3 class="text-3xl font-bold mb-10 border-l-4 border-red-600 pl-4 uppercase">Featured Collection</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            <div class="product-card bg-gray-900 rounded-2xl overflow-hidden border border-gray-800 p-4">
+                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=500&q=80" class="rounded-xl mb-4 h-64 w-full object-cover">
+                <h4 class="text-xl font-bold">HZ Stealth Tracksuit</h4>
+                <p class="text-gray-400 text-sm mb-4">Export quality, breathable fabric.</p>
+                <a href="https://wa.me/923488480203?text=Order: HZ Tracksuit" class="block w-full bg-red-600 py-3 rounded-lg font-bold hover:bg-red-700">Order via WhatsApp</a>
+            </div>
+            <div class="product-card bg-gray-900 rounded-2xl overflow-hidden border border-gray-800 p-4">
+                <img src="https://images.unsplash.com/photo-1584013323583-8257c94286a1?auto=format&fit=crop&w=500&q=80" class="rounded-xl mb-4 h-64 w-full object-cover">
+                <h4 class="text-xl font-bold">HZ Whey Isolate</h4>
+                <p class="text-gray-400 text-sm mb-4">Pure protein, lab-certified.</p>
+                <a href="https://wa.me/923488480203?text=Order: HZ Whey Isolate" class="block w-full bg-red-600 py-3 rounded-lg font-bold hover:bg-red-700">Order via WhatsApp</a>
+            </div>
+            <div class="product-card bg-gray-900 rounded-2xl overflow-hidden border border-gray-800 p-4">
+                <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?auto=format&fit=crop&w=500&q=80" class="rounded-xl mb-4 h-64 w-full object-cover">
+                <h4 class="text-xl font-bold">HZ Alpha Hybrid Cycle</h4>
+                <p class="text-gray-400 text-sm mb-4">Performance frames for pro riders.</p>
+                <a href="https://wa.me/923488480203?text=Order: HZ Alpha Cycle" class="block w-full bg-red-600 py-3 rounded-lg font-bold hover:bg-red-700">Order via WhatsApp</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="sizes" class="bg-gray-900 py-16 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h3 class="text-3xl font-bold mb-8 uppercase">International Size Guide</h3>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm text-left border-collapse">
+                    <thead class="bg-gray-800 text-red-500 uppercase">
+                        <tr>
+                            <th class="p-4 border border-gray-700">Size</th>
+                            <th class="p-4 border border-gray-700">Chest (Inches)</th>
+                            <th class="p-4 border border-gray-700">Waist (Inches)</th>
+                            <th class="p-4 border border-gray-700">EU Shoe Size</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-gray-300">
+                        <tr><td class="p-4 border border-gray-700">Small</td><td class="p-4 border border-gray-700">36-38</td><td class="p-4 border border-gray-700">30-32</td><td class="p-4 border border-gray-700">40-41</td></tr>
+                        <tr><td class="p-4 border border-gray-700">Medium</td><td class="p-4 border border-gray-700">38-40</td><td class="p-4 border border-gray-700">32-34</td><td class="p-4 border border-gray-700">42-43</td></tr>
+                        <tr><td class="p-4 border border-gray-700">Large</td><td class="p-4 border border-gray-700">40-42</td><td class="p-4 border border-gray-700">34-36</td><td class="p-4 border border-gray-700">44-45</td></tr>
+                        <tr><td class="p-4 border border-gray-700">XL</td><td class="p-4 border border-gray-700">42-44</td><td class="p-4 border border-gray-700">36-38</td><td class="p-4 border border-gray-700">46+</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="checkout" class="py-20 px-6 max-w-4xl mx-auto">
+        <div class="bg-white text-black p-8 rounded-3xl shadow-2xl relative overflow-hidden">
+            <div class="absolute top-0 right-0 p-4 bg-red-600 text-white text-xs font-bold uppercase tracking-widest">Global Export Info</div>
+            <h3 class="text-4xl font-black mb-6 italic uppercase">HZ Payment Hub</h3>
+            <div class="space-y-4">
+                <div class="border-b pb-2">
+                    <p class="text-xs text-gray-500 uppercase">Bank Name</p>
+                    <p class="text-xl font-bold">United Bank Limited (UBL)</p>
+                </div>
+                <div class="border-b pb-2">
+                    <p class="text-xs text-gray-500 uppercase">International IBAN</p>
+                    <p class="text-xl font-mono tracking-tighter">PK43 UNIL 0109 0003 3917 2252</p>
+                </div>
+                <div class="border-b pb-2">
+                    <p class="text-xs text-gray-500 uppercase">SWIFT / BIC Code</p>
+                    <p class="text-xl font-mono">UNILPKKA</p>
+                </div>
+            </div>
+            <p class="mt-6 text-sm text-gray-600 mb-8 italic italic">Contact worldhonest6@gmail.com for bulk orders.</p>
+            <a href="https://wa.me/923488480203" class="block w-full text-center bg-black text-white py-4 rounded-xl font-bold uppercase tracking-widest hover:bg-gray-800 transition">Confirm Order on WhatsApp</a>
+        </div>
+    </section>
+
+    <footer class="p-10 text-center border-t border-gray-900 text-gray-500 text-xs">
+        &copy; 2026 HZ Sports Global. High Performance. Lower Prices. Faisalabad, Pakistan.
+    </footer>
+
+    <script src="//code.tidio.co/YOUR_CODE_HERE.js" async></script>
+
+</body>
+</html>
