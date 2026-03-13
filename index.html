@@ -3,21 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HZ SPORTS | Global Store</title>
+    <title>HZ SPORTS | Official Global Store</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         .product-card { transition: 0.3s; border: 1px solid #2d3748; background: #0a0a0a; }
-        .product-card:hover { border-color: #ff0000; transform: translateY(-5px); box-shadow: 0 0 15px rgba(255,0,0,0.2); }
+        .product-card:hover { border-color: #ff0000; transform: translateY(-5px); }
+        .logo-font { font-family: 'Arial Black', sans-serif; letter-spacing: -2px; }
+        .speed-line { height: 2px; background: linear-gradient(90deg, #ff0000, transparent); width: 50px; }
     </style>
 </head>
 <body class="bg-black text-white font-sans">
 
     <nav class="sticky top-0 z-50 bg-black border-b border-red-900 p-4">
         <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
-            <h1 class="text-4xl font-black text-red-600 tracking-tighter">HZ SPORTS</h1>
+            <div class="flex items-center gap-2">
+                <div class="bg-red-600 p-2 rounded-sm rotate-12 font-black text-xl italic">HZ</div>
+                <div class="flex flex-col">
+                    <h1 class="text-2xl font-black tracking-tighter italic">SPORTS</h1>
+                    <div class="speed-line"></div>
+                </div>
+            </div>
+            
             <div class="flex items-center gap-2 w-full md:w-1/2">
-                <input type="text" id="searchBar" placeholder="Search 2000+ products..." 
-                       class="w-full p-3 rounded-l-lg bg-gray-900 border border-gray-700 text-white focus:outline-none focus:border-red-600">
+                <input type="text" id="searchBar" placeholder="Search 2000+ items..." 
+                       class="w-full p-3 rounded-l-lg bg-gray-900 border border-gray-700 text-white focus:outline-none">
                 <select id="currency" class="p-3 bg-red-600 rounded-r-lg font-bold text-sm">
                     <option value="PKR">PKR</option>
                     <option value="USD">USD</option>
@@ -26,9 +35,12 @@
         </div>
     </nav>
 
-    <header class="py-10 text-center border-b border-gray-900">
-        <h2 class="text-xl font-bold text-gray-400 uppercase tracking-widest">Premium Quality. Factory Direct.</h2>
-        <p class="text-sm text-red-500 mt-2">Shipping Globally from Pakistan | Bank Transfer Accepted</p>
+    <header class="relative h-64 flex items-center justify-center overflow-hidden bg-gray-900">
+        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1200" class="absolute w-full h-full object-cover opacity-40">
+        <div class="relative z-10 text-center px-4">
+            <h2 class="text-4xl md:text-6xl font-black uppercase italic tracking-tighter">Factory Direct</h2>
+            <p class="text-red-500 font-bold tracking-widest mt-2 uppercase">From Faisalabad to the World</p>
+        </div>
     </header>
 
     <main class="max-w-7xl mx-auto p-4 md:p-8">
@@ -36,41 +48,39 @@
             </div>
     </main>
 
-    <section class="bg-gray-900 p-8 text-center mt-10">
-        <h3 class="text-2xl font-black mb-4 uppercase">Official Payment Details</h3>
-        <div class="inline-block text-left bg-black p-6 rounded-2xl border border-red-600">
-            <p class="text-red-500 text-xs font-bold uppercase">Bank Name</p>
-            <p class="text-lg font-bold mb-3">United Bank Limited (UBL)</p>
-            <p class="text-red-500 text-xs font-bold uppercase">Account IBAN</p>
-            <p class="text-md font-mono mb-3 uppercase">PK43 UNIL 0109 0003 3917 2252</p>
-            <p class="text-red-500 text-xs font-bold uppercase">SWIFT Code</p>
-            <p class="text-md font-mono">UNILPKKA</p>
+    <section class="bg-zinc-950 p-8 text-center mt-10 border-t border-red-900">
+        <h3 class="text-2xl font-black mb-6 uppercase italic">Secure International Payment</h3>
+        <div class="inline-block text-left bg-black p-8 rounded-3xl border border-gray-800 shadow-2xl shadow-red-900/20">
+            <p class="text-red-500 text-[10px] font-black uppercase tracking-widest">Bank</p>
+            <p class="text-xl font-bold mb-4">United Bank Limited (UBL)</p>
+            <p class="text-red-500 text-[10px] font-black uppercase tracking-widest">Account Number / IBAN</p>
+            <p class="text-lg font-mono mb-4 text-gray-300">PK43 UNIL 0109 0003 3917 2252</p>
+            <p class="text-red-500 text-[10px] font-black uppercase tracking-widest text-center border-t border-gray-800 pt-4">Direct WhatsApp Support</p>
+            <a href="https://wa.me/923488480203" class="mt-2 block text-center text-green-500 font-bold">0348 8480203</a>
         </div>
-        <p class="mt-6 text-gray-500">Contact: worldhonest6@gmail.com</p>
     </section>
 
-    <footer class="p-6 text-center text-gray-700 text-xs">
-        &copy; 2026 HZ SPORTS GLOBAL - ALL RIGHTS RESERVED
+    <footer class="p-10 text-center text-gray-700 text-xs">
+        &copy; 2026 HZ SPORTS GLOBAL | PREMIUM ATHLETIC GEAR
     </footer>
 
     <script>
         const products = [];
-        const categories = ["Tracksuit", "Cycle", "Gym Shoes", "Whey Protein", "Gym Bag", "Boxing Gloves", "Cycling Helmet"];
-        const colors = ["Matte Black", "Blood Red", "Ocean Blue", "Silver", "Forest Green"];
+        const categories = ["Tracksuit", "Road Cycle", "Crossfit Shoes", "Whey Pro", "Dumbbell Set", "Sport Hoodie"];
+        const colors = ["Black Stealth", "Ruby Red", "Electric Blue", "Steel Grey"];
         let currentCurrency = "PKR";
 
-        // Generate 2000 unique HZ items
         for (let i = 1; i <= 2000; i++) {
             const cat = categories[Math.floor(Math.random() * categories.length)];
             const col = colors[Math.floor(Math.random() * colors.length)];
-            const basePrice = Math.floor(Math.random() * (45000 - 1500) + 1500);
+            const basePrice = Math.floor(Math.random() * (55000 - 2500) + 2500);
             
             products.push({
                 id: i,
-                name: `HZ ${col} ${cat} Series-${i}`,
+                name: `HZ ${col} ${cat} X-${i}`,
                 pricePKR: basePrice,
-                priceUSD: Math.round(basePrice / 278), // Approximate 2026 conversion
-                img: `https://picsum.photos/seed/hz${i}/400/400`
+                priceUSD: Math.round(basePrice / 278),
+                img: `https://picsum.photos/seed/hzstore${i}/400/400`
             });
         }
 
@@ -81,23 +91,19 @@
             grid.innerHTML = items.map(p => `
                 <div class="product-card rounded-xl overflow-hidden p-3 flex flex-col justify-between">
                     <img src="${p.img}" class="rounded-lg h-32 md:h-48 w-full object-cover mb-2" loading="lazy">
-                    <h4 class="text-xs font-bold h-8 overflow-hidden">${p.name}</h4>
-                    <p class="text-red-500 font-black mt-1">
+                    <h4 class="text-[11px] font-bold uppercase tracking-tight h-8 overflow-hidden">${p.name}</h4>
+                    <p class="text-red-600 font-black mt-1 text-sm">
                         ${currentCurrency === "PKR" ? p.pricePKR.toLocaleString() + ' PKR' : '$' + p.priceUSD}
                     </p>
-                    <a href="https://wa.me/923488480203?text=Order ID:${p.id} - ${p.name}" 
-                       class="mt-3 block text-center bg-white text-black text-[10px] font-black py-2 rounded uppercase hover:bg-red-600 hover:text-white transition">
-                       Buy on WhatsApp
+                    <a href="https://wa.me/923488480203?text=Enquiry: ID-${p.id} ${p.name}" 
+                       class="mt-3 block text-center bg-white text-black text-[10px] font-black py-2 rounded-lg uppercase transition-all hover:bg-red-600 hover:text-white">
+                       Order Now
                     </a>
                 </div>
             `).join('');
         }
 
-        currencySelector.onchange = (e) => {
-            currentCurrency = e.target.value;
-            render(products);
-        };
-
+        currencySelector.onchange = (e) => { currentCurrency = e.target.value; render(products); };
         document.getElementById('searchBar').oninput = (e) => {
             const val = e.target.value.toLowerCase();
             render(products.filter(p => p.name.toLowerCase().includes(val)));
